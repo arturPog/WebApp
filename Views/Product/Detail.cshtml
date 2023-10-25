@@ -1,0 +1,20 @@
+﻿@using WebApp.ViewModels
+@model PageViewModel
+@{
+    //ViewData["Title"] = "Menu";
+
+}
+
+<div class="col-lg-6 mb-4">
+    <img src="@Model.CurrentProduct.ImageUrl" class="img-fluid" alt="@Model.CurrentProduct.Nazwa">
+</div>
+
+<div class="col-lg-6">
+    <h2>@Model.CurrentProduct.Nazwa</h2>
+    <p class="text-muted">@Model.CurrentProduct.Opis</p>
+    <h3 class="my-4">@Model.CurrentProduct.Cena.ToString("C")</h3>
+    <p>
+        <a href="@Url.Action("Index", "Produkty" , new {categoryName=Model.CategoryNameUrl, categoryId =Model.CategoryId })" class="btn btn-primary">Wróć do listy produktów</a>
+        @* <a href="@Url.Action("Kup", "Koszyk", new { id = Model.ProduktId })" class="btn btn-success">Kup teraz</a> *@
+    </p>
+</div>

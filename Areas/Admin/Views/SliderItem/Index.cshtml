@@ -1,0 +1,31 @@
+﻿@using WebApp.Models
+@model IEnumerable<SliderItem>
+@{
+    ViewData["Title"] = "Lista Sliderów";
+}
+<div class="col-12">
+
+    <a href="@Url.Action("Create", "SliderItem")" class="btn btn-primary mb-2">Dodaj Kategorię</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var slider in Model)
+            {
+                <tr>
+                    <td>@slider.SliderItemId</td>
+                    <td>@slider.Nazwa</td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", "SliderItem", new { id = @slider.SliderItemId })" class="btn btn-sm btn-info">Edytuj</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

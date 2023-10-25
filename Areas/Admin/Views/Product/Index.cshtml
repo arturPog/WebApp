@@ -1,0 +1,33 @@
+﻿@using WebApp.Models
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Lista KategoriI";
+}
+<div class="col-12">
+
+    <a href="@Url.Action("Create", "Product")" class="btn btn-primary mb-2">Dodaj Product</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Kategoria</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProduktId</td>
+                    <td>@product.Nazwa</td>
+                    <td>@product.CategoryName</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Product", new { id = product.ProduktId })" class="btn btn-sm btn-info">Edytuj</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

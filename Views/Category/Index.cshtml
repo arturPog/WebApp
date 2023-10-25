@@ -1,0 +1,19 @@
+﻿@using WebApp.ViewModels
+@model PageViewModel
+@{
+    //ViewData["Title"] = "Menu";
+
+}
+<div class="col-md-6">
+    
+    <img src="@Model.CurrentCategory.ImageUrl" class="img-fluid rounded" alt="@Model.CurrentCategory.Nazwa" />
+</div>
+
+<!-- Sekcja tekstu -->
+<div class="col-md-6">
+    <h2>@Model.CurrentCategory.Nazwa</h2>
+    <p>
+        @Html.Raw(Model.CurrentCategory.Opis)
+    </p>
+   
+</div>

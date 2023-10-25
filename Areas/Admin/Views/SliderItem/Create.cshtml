@@ -1,0 +1,32 @@
+﻿@using WebApp.Models
+@model SliderItem
+@{
+    ViewData["Title"] = "Dodawanie Slidera";
+}
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Nazwa"></label>
+        <input asp-for="Nazwa" class="form-control" />
+        <span asp-validation-for="Nazwa" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Opis"></label>
+        <textarea asp-for="Opis" class="form-control"></textarea>
+        <span asp-validation-for="Opis" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Image">Grafika Slider</label>
+        <input type="file" class="form-control-file" id="Image" name="Image">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IsActive"></label>
+        <select asp-for="IsActive" class="form-control">
+            <option value="true">Aktywny</option>
+            <option value="false">Nieaktywny</option>
+        </select>
+    </div>
+    <button type="submit">Dodaj</button>
+</form>

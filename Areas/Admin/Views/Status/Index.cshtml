@@ -1,0 +1,31 @@
+﻿@using WebApp.Models
+@model IEnumerable<Status>
+@{
+    ViewData["Title"] = "Lista Statusów";
+}
+<div class="col-12">
+
+    <a href="@Url.Action("Create", "SliderItem")" class="btn btn-primary mb-2">Dodaj Kategorię</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var status in Model)
+            {
+                <tr>
+                    <td>@status.StatusId</td>
+                    <td>@status.Nazwa</td>
+
+                    <td>
+                        <a href="@Url.Action("Edit", "Status", new { id = status.StatusId })" class="btn btn-sm btn-info">Edytuj</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

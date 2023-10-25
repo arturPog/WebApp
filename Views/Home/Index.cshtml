@@ -1,0 +1,33 @@
+﻿@using WebApp.ViewModels
+@model PageViewModel
+@{
+    //ViewData["Title"] = "Menu";
+
+}
+
+<div class="col-md-12">
+    @foreach (var item in Model.SliderItems)
+    {
+        <img src="@item.ImageUrl" class="img-fluid rounded" alt="@item.Nazwa" />
+    }
+    
+</div>
+
+@foreach (var item in Model.FirstPageCategories)
+{
+    <div class="col-md-6">
+
+        <img src="@item.ImageUrl" class="img-fluid rounded" alt="@item.Nazwa" />
+    </div>
+
+    <!-- Sekcja tekstu -->
+    <div class="col-md-6">
+        <h2>@item.Nazwa</h2>
+        <p>
+            @Html.Raw(item.Opis)
+        </p>
+        
+    </div>
+}
+
+

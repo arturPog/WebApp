@@ -1,0 +1,43 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Dostosowanie marginesów, paddingów, kolorów itp. */
+.img-fluid {
+    max-height: 400px; /* Dostosuj wysokoœæ obrazu */
+    object-fit: cover; /* Aby obraz by³ dobrze wyœwietlany */
+}
+
+/* Stylowanie tekstu */
+h2 {
+    color: #0056b3; /* Kolor tytu³u */
+    margin-bottom: 20px; /* Margines poni¿ej tytu³u */
+}
+
+p {
+    font-size: 1.1em; /* Rozmiar tekstu */
+    color: #333; /* Kolor tekstu */
+    line-height: 1.6; /* Wysokoœæ linii */
+}
+.card-img-top {
+    height: 200px; /* Ustaw wysokoœæ obrazu */
+    object-fit: cover; /* Zapewnia, ¿e obrazy s¹ dobrze wyœwietlane */
+}

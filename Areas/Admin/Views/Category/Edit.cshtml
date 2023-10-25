@@ -1,0 +1,54 @@
+﻿@using WebApp.Models
+@model Category
+@{
+    ViewData["Title"] = "Edycja Kategorii";
+}
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="CategoryId" />
+    <input type="hidden" asp-for="ImageUrl" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Nazwa" class="control-label"></label>
+        <input asp-for="Nazwa" class="form-control" />
+        <span asp-validation-for="Nazwa" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Opis" class="control-label"></label>
+        <textarea asp-for="Opis" class="form-control"></textarea>
+        <span asp-validation-for="Opis" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Image">Grafika kategorii (zostaw puste, aby nie zmieniać)</label>
+        <input type="file" class="form-control-file" id="Image" name="Image">
+        @if (Model.ImageUrl != null)
+        {
+            <img src="@Model.ImageUrl" style="max-height: 200px; max-width: 200px;" />
+        }
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsMenu" class="form-check-input" type="checkbox" />
+        <label asp-for="IsMenu" class="form-check-label">Czy w menu?</label>
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsFirstPage" class="form-check-input" type="checkbox" />
+        <label asp-for="IsFirstPage" class="form-check-label">Czy na pierwszej stronie?</label>
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="IsActive" class="form-check-label">Czy aktywna?</label>
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsProduct" class="form-check-input" type="checkbox" />
+        <label asp-for="IsProduct" class="form-check-label">Czy produktu (np. Pierścionki)?</label>
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsInfo" class="form-check-input" type="checkbox" />
+        <label asp-for="IsInfo" class="form-check-label">Czy Informacyjna (np. O Nas)?</label>
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsServis" class="form-check-input" type="checkbox" />
+        <label asp-for="IsServis" class="form-check-label">Czy Tekstowa (np. regulamin)?</label>
+    </div>
+    <button type="submit" class="btn btn-success">Aktualizuj</button>
+</form>
